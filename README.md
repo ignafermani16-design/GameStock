@@ -132,8 +132,165 @@ Las decisiones de anidar (embedded) o referenciar (references) se basaron en tre
 
 ---
 
-## 4. Próximos pasos
+## 4. Implementación y sembrado de datos (Fase 2)
 
-- Implementación de las colecciones en MongoDB (fase 2).
-- Definición de índices sobre `plataformaId` en `productos` y `clienteId` en `ventas`.
-- Scripts de carga de datos de prueba (seed data).
+### 4.1 Base de datos y colecciones
+
+Se creó la base de datos **`gamestock`** en MongoDB, con las cuatro colecciones definidas en el modelado conceptual: `plataformas`, `productos`, `clientes` y `ventas`.
+
+### 4.2 Dataset de prueba (seeding)
+
+Los archivos de sembrado se encuentran en la carpeta [`/scripts`](./scripts):
+
+- [`plataformas.json`](./scripts/plataformas.json) — 6 documentos.
+- [`clientes.json`](./scripts/clientes.json) — 11 documentos.
+- [`productos.json`](./scripts/productos.json) — 12 documentos.
+- [`ventas.json`](./scripts/ventas.json) — 10 documentos.
+
+Para importarlos en MongoDB (con la base ya creada), desde una terminal ubicada en la carpeta `/scripts`:
+
+```bash
+mongoimport --db gamestock --collection plataformas --file plataformas.json --jsonArray
+mongoimport --db gamestock --collection clientes --file clientes.json --jsonArray
+mongoimport --db gamestock --collection productos --file productos.json --jsonArray
+mongoimport --db gamestock --collection ventas --file ventas.json --jsonArray
+```
+
+#### Variaciones estructurales (schema-less)
+
+Para evidenciar la flexibilidad del esquema, se incluyeron documentos con variaciones justificadas por el negocio:
+
+- **`productos`** — algunos juegos **usados** incluyen un subdocumento anidado `condicion` (`caja`, `manual`, `rayas`) que no existe en los juegos nuevos, ya que ese detalle solo aplica a productos de segunda mano.
+- **`productos`** — algunas **ediciones especiales** incluyen los campos `edicionEspecial` y `contenidoEdicion` (un array de extras), ausentes en las ediciones estándar.
+- **`ventas`** — solo algunas ventas incluyen el subdocumento `descuento` (cuando aplicó una promoción) o `envio` (cuando la compra se despachó a domicilio en vez de retirarse en el local), y el array `items` varía entre 1 y 4 elementos según la compra.
+
+### 4.3 Consultas y actualizaciones (`/scripts/queries.js`)
+
+El archivo [`queries.js`](./scripts/queries.js) contiene, comentada línea por línea, cada una de las consultas y operaciones detalladas en la sección 5.
+
+---
+
+## 5. Pruebas de consultas (MQL)
+
+### 5.1 Consultas de lectura
+
+**1. Filtrado básico por coincidencia exacta**
+
+```javascript
+db.productos.find({ estado: "usado" });
+```
+*Problema de negocio que resuelve:* permite al mostrador ver rápidamente todos los juegos usados en stock, para controlar su condición física o armar promociones de productos de segunda mano.
+
+![Ejecución en Mongosh: filtrado de productos usados](./img/01-filtrado-basico.png)
+
+---
+
+**2. Operadores de comparación (`$gte`, `$lte`, `$in`)**
+
+```javascript
+db.productos.find({
+  precio: { $gte: 40000, $lte: 70000 },
+  plataformaId: {
+    $in: [
+      ObjectId("650000000000000000000001"), // PS5
+      ObjectId("650000000000000000000003")  // Xbox Series X
+    ]
+  }
+});
+```
+*Problema de negocio que resuelve:* identifica productos "premium" (precio medio-alto) disponibles solo en consolas de última generación, útil para armar una sección de destacados en la vidriera.
+
+![Ejecución en Mongosh: productos premium en PS5 o Xbox Series X (parte 1)](./img/02-comparacion-1.png)
+![Ejecución en Mongosh: productos premium en PS5 o Xbox Series X (parte 2, resto del resultado)](./img/02-comparacion-2.png)
+
+---
+
+**3. Acceso a propiedades anidadas (dot notation)**
+
+```javascript
+db.productos.find({ "condicion.caja": "Buena" });
+```
+*Problema de negocio que resuelve:* dentro de los productos usados, filtra específicamente los que están en buen estado de caja, para asegurar calidad antes de ofrecerlos a un cliente.
+
+![Ejecución en Mongosh: productos usados con caja en buena condición](./img/03-dot-notation.png)
+
+---
+
+**4. Proyección de campos (excluyendo `_id`)**
+
+```javascript
+db.productos.find(
+  { estado: "nuevo" },
+  { titulo: 1, precio: 1, _id: 0 }
+);
+```
+*Problema de negocio que resuelve:* genera un listado liviano de título + precio para mostrar en pantalla de catálogo, sin exponer campos internos como el `_id`.
+
+![Ejecución en Mongosh: listado de título y precio de productos nuevos](./img/04-proyeccion.png)
+
+---
+
+**5. Filtro de elementos dentro de un arreglo (`$elemMatch`)**
+
+```javascript
+db.ventas.find({
+  items: { $elemMatch: { cantidad: { $gte: 2 } } }
+});
+```
+*Problema de negocio que resuelve:* detecta ventas donde se compró más de una unidad del mismo producto en un solo ítem, lo que puede indicar compras mayoristas o de reventa.
+
+![Ejecución en Mongosh: ventas con algún ítem de cantidad mayor o igual a 2](./img/05-elemmatch.png)
+
+### 5.2 Actualizaciones y eliminación
+
+**1. `$set` — modificar un campo y añadir una propiedad nueva**
+
+```javascript
+db.productos.updateOne(
+  { _id: ObjectId("650000000000000000000210") },
+  {
+    $set: {
+      enOferta: true,
+      precioOferta: 63000.00
+    }
+  }
+);
+```
+*Problema de negocio que resuelve:* pone en oferta un producto puntual (Marvel's Spider-Man 2), agregando un precio promocional sin perder el precio de lista original.
+
+![Ejecución en Mongosh: actualización con $set para marcar oferta](./img/06-set.png)
+
+---
+
+**2. `$inc` — incrementar/decrementar un contador**
+
+```javascript
+db.productos.updateOne(
+  { _id: ObjectId("650000000000000000000201") },
+  { $inc: { stock: -1 } }
+);
+```
+*Problema de negocio que resuelve:* descuenta automáticamente una unidad de stock al concretarse una venta, de forma atómica (sin tener que leer y reescribir el valor manualmente).
+
+![Ejecución en Mongosh: actualización con $inc para descontar stock](./img/07-inc.png)
+
+---
+
+**3. `deleteOne` — eliminación segura con filtro estricto**
+
+```javascript
+db.clientes.deleteOne({ email: "email.eliminar@mail.com" });
+```
+*Problema de negocio que resuelve:* elimina una cuenta de cliente de prueba/duplicada que solicitó la baja, usando el email (campo único) como criterio estricto para evitar borrar más de un documento por error.
+
+**Antes de eliminar** — la colección `clientes` con el registro de prueba (`email.eliminar@mail.com`) todavía presente:
+
+![Colección clientes en Compass antes de eliminar el registro de prueba](./img/08-deleteone-antes.png)
+
+**Ejecución del `deleteOne`:**
+
+![Ejecución en Mongosh: deleteOne por email, deletedCount 1](./img/08-deleteone-ejecucion.png)
+
+**Después de eliminar** — el registro de prueba ya no aparece en la colección:
+
+![Colección clientes en Compass después de eliminar el registro de prueba](./img/08-deleteone-despues.png)
