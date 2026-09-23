@@ -1,0 +1,218 @@
+[
+  {
+    "_id": { "$oid": "650000000000000000000301" },
+    "clienteId": { "$oid": "650000000000000000000101" },
+    "fecha": { "$date": "2025-06-12T18:45:00Z" },
+    "medioPago": "Tarjeta de débito",
+    "items": [
+      {
+        "productoId": { "$oid": "650000000000000000000201" },
+        "titulo": "God of War Ragnarök",
+        "cantidad": 1,
+        "precioUnitario": 55000.00
+      },
+      {
+        "productoId": { "$oid": "650000000000000000000202" },
+        "titulo": "Mario Kart 8 Deluxe",
+        "cantidad": 2,
+        "precioUnitario": 38000.00
+      }
+    ],
+    "total": 131000.00
+  },
+  {
+    "_id": { "$oid": "650000000000000000000302" },
+    "clienteId": { "$oid": "650000000000000000000102" },
+    "fecha": { "$date": "2025-06-14T11:20:00Z" },
+    "medioPago": "Efectivo",
+    "items": [
+      {
+        "productoId": { "$oid": "650000000000000000000206" },
+        "titulo": "The Legend of Zelda: Tears of the Kingdom",
+        "cantidad": 1,
+        "precioUnitario": 60000.00
+      }
+    ],
+    "total": 60000.00
+  },
+  {
+    "_id": { "$oid": "650000000000000000000303" },
+    "clienteId": { "$oid": "650000000000000000000103" },
+    "fecha": { "$date": "2025-06-18T16:05:00Z" },
+    "medioPago": "Transferencia",
+    "items": [
+      {
+        "productoId": { "$oid": "650000000000000000000208" },
+        "titulo": "Elden Ring",
+        "cantidad": 1,
+        "precioUnitario": 45000.00
+      },
+      {
+        "productoId": { "$oid": "650000000000000000000212" },
+        "titulo": "Resident Evil 4 Remake",
+        "cantidad": 1,
+        "precioUnitario": 50000.00
+      }
+    ],
+    "descuento": {
+      "porcentaje": 10,
+      "motivo": "Cliente frecuente"
+    },
+    "total": 85500.00
+  },
+  {
+    "_id": { "$oid": "650000000000000000000304" },
+    "clienteId": { "$oid": "650000000000000000000104" },
+    "fecha": { "$date": "2025-06-20T10:15:00Z" },
+    "medioPago": "Efectivo",
+    "items": [
+      {
+        "productoId": { "$oid": "650000000000000000000205" },
+        "titulo": "FIFA 23",
+        "cantidad": 1,
+        "precioUnitario": 18000.00
+      }
+    ],
+    "total": 18000.00
+  },
+  {
+    "_id": { "$oid": "650000000000000000000305" },
+    "clienteId": { "$oid": "650000000000000000000105" },
+    "fecha": { "$date": "2025-06-25T19:30:00Z" },
+    "medioPago": "Tarjeta de crédito",
+    "items": [
+      {
+        "productoId": { "$oid": "650000000000000000000210" },
+        "titulo": "Marvel's Spider-Man 2",
+        "cantidad": 1,
+        "precioUnitario": 70000.00
+      }
+    ],
+    "envio": {
+      "tipo": "domicilio",
+      "direccion": "San Martín 1234, Mendoza",
+      "costoEnvio": 1500.00
+    },
+    "total": 71500.00
+  },
+  {
+    "_id": { "$oid": "650000000000000000000306" },
+    "clienteId": { "$oid": "650000000000000000000106" },
+    "fecha": { "$date": "2025-07-02T13:50:00Z" },
+    "medioPago": "Efectivo",
+    "items": [
+      {
+        "productoId": { "$oid": "650000000000000000000203" },
+        "titulo": "Halo Infinite",
+        "cantidad": 1,
+        "precioUnitario": 42000.00
+      },
+      {
+        "productoId": { "$oid": "650000000000000000000211" },
+        "titulo": "Minecraft",
+        "cantidad": 1,
+        "precioUnitario": 25000.00
+      },
+      {
+        "productoId": { "$oid": "650000000000000000000202" },
+        "titulo": "Mario Kart 8 Deluxe",
+        "cantidad": 1,
+        "precioUnitario": 38000.00
+      }
+    ],
+    "total": 105000.00
+  },
+  {
+    "_id": { "$oid": "650000000000000000000307" },
+    "clienteId": { "$oid": "650000000000000000000107" },
+    "fecha": { "$date": "2025-07-05T15:10:00Z" },
+    "medioPago": "Tarjeta de débito",
+    "items": [
+      {
+        "productoId": { "$oid": "650000000000000000000207" },
+        "titulo": "Forza Horizon 5",
+        "cantidad": 1,
+        "precioUnitario": 30000.00
+      }
+    ],
+    "total": 30000.00
+  },
+  {
+    "_id": { "$oid": "650000000000000000000308" },
+    "clienteId": { "$oid": "650000000000000000000108" },
+    "fecha": { "$date": "2025-07-09T17:40:00Z" },
+    "medioPago": "Efectivo",
+    "items": [
+      {
+        "productoId": { "$oid": "650000000000000000000209" },
+        "titulo": "Grand Theft Auto V",
+        "cantidad": 2,
+        "precioUnitario": 15000.00
+      }
+    ],
+    "descuento": {
+      "porcentaje": 5,
+      "motivo": "Promoción de usados"
+    },
+    "total": 28500.00
+  },
+  {
+    "_id": { "$oid": "650000000000000000000309" },
+    "clienteId": { "$oid": "650000000000000000000109" },
+    "fecha": { "$date": "2025-07-14T20:00:00Z" },
+    "medioPago": "Transferencia",
+    "items": [
+      {
+        "productoId": { "$oid": "650000000000000000000201" },
+        "titulo": "God of War Ragnarök",
+        "cantidad": 1,
+        "precioUnitario": 55000.00
+      },
+      {
+        "productoId": { "$oid": "650000000000000000000204" },
+        "titulo": "The Last of Us Part I",
+        "cantidad": 1,
+        "precioUnitario": 65000.00
+      }
+    ],
+    "envio": {
+      "tipo": "domicilio",
+      "direccion": "Godoy Cruz, Mendoza",
+      "costoEnvio": 1500.00
+    },
+    "total": 121500.00
+  },
+  {
+    "_id": { "$oid": "650000000000000000000310" },
+    "clienteId": { "$oid": "650000000000000000000110" },
+    "fecha": { "$date": "2025-07-20T12:30:00Z" },
+    "medioPago": "Tarjeta de crédito",
+    "items": [
+      {
+        "productoId": { "$oid": "650000000000000000000206" },
+        "titulo": "The Legend of Zelda: Tears of the Kingdom",
+        "cantidad": 1,
+        "precioUnitario": 60000.00
+      },
+      {
+        "productoId": { "$oid": "650000000000000000000202" },
+        "titulo": "Mario Kart 8 Deluxe",
+        "cantidad": 1,
+        "precioUnitario": 38000.00
+      },
+      {
+        "productoId": { "$oid": "650000000000000000000211" },
+        "titulo": "Minecraft",
+        "cantidad": 1,
+        "precioUnitario": 25000.00
+      },
+      {
+        "productoId": { "$oid": "650000000000000000000208" },
+        "titulo": "Elden Ring",
+        "cantidad": 1,
+        "precioUnitario": 45000.00
+      }
+    ],
+    "total": 168000.00
+  }
+]

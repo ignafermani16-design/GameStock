@@ -1,0 +1,38 @@
+[
+  {
+    "_id": { "$oid": "650000000000000000000001" },
+    "nombre": "PlayStation 5",
+    "fabricante": "Sony",
+    "generacion": 9
+  },
+  {
+    "_id": { "$oid": "650000000000000000000002" },
+    "nombre": "PlayStation 4",
+    "fabricante": "Sony",
+    "generacion": 8
+  },
+  {
+    "_id": { "$oid": "650000000000000000000003" },
+    "nombre": "Xbox Series X",
+    "fabricante": "Microsoft",
+    "generacion": 9
+  },
+  {
+    "_id": { "$oid": "650000000000000000000004" },
+    "nombre": "Xbox One",
+    "fabricante": "Microsoft",
+    "generacion": 8
+  },
+  {
+    "_id": { "$oid": "650000000000000000000005" },
+    "nombre": "Nintendo Switch",
+    "fabricante": "Nintendo",
+    "generacion": 8
+  },
+  {
+    "_id": { "$oid": "650000000000000000000006" },
+    "nombre": "PC",
+    "fabricante": "N/A",
+    "generacion": null
+  }
+]

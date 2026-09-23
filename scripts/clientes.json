@@ -1,0 +1,81 @@
+[
+  {
+    "_id": { "$oid": "650000000000000000000101" },
+    "nombre": "Martín Suárez",
+    "email": "martin.suarez@mail.com",
+    "telefono": "261-555-1234",
+    "fechaAlta": { "$date": "2024-11-05T13:00:00Z" }
+  },
+  {
+    "_id": { "$oid": "650000000000000000000102" },
+    "nombre": "Camila Rodríguez",
+    "email": "camila.rodriguez@mail.com",
+    "telefono": "261-555-2222",
+    "fechaAlta": { "$date": "2024-12-10T10:30:00Z" },
+    "clienteFrecuente": true
+  },
+  {
+    "_id": { "$oid": "650000000000000000000103" },
+    "nombre": "Facundo Gómez",
+    "email": "facundo.gomez@mail.com",
+    "telefono": "261-555-3333",
+    "fechaAlta": { "$date": "2025-01-15T16:20:00Z" }
+  },
+  {
+    "_id": { "$oid": "650000000000000000000104" },
+    "nombre": "Valentina López",
+    "email": "valentina.lopez@mail.com",
+    "telefono": "261-555-4444",
+    "fechaAlta": { "$date": "2025-02-02T09:00:00Z" }
+  },
+  {
+    "_id": { "$oid": "650000000000000000000105" },
+    "nombre": "Tomás Pereyra",
+    "email": "tomas.pereyra@mail.com",
+    "telefono": "261-555-5555",
+    "fechaAlta": { "$date": "2025-02-20T18:45:00Z" }
+  },
+  {
+    "_id": { "$oid": "650000000000000000000106" },
+    "nombre": "Sofía Martín",
+    "email": "sofia.martin@mail.com",
+    "telefono": "261-555-6666",
+    "fechaAlta": { "$date": "2025-03-08T11:10:00Z" },
+    "clienteFrecuente": true
+  },
+  {
+    "_id": { "$oid": "650000000000000000000107" },
+    "nombre": "Ignacio Fernández",
+    "email": "ignacio.fernandez@mail.com",
+    "telefono": "261-555-7777",
+    "fechaAlta": { "$date": "2025-03-30T15:00:00Z" }
+  },
+  {
+    "_id": { "$oid": "650000000000000000000108" },
+    "nombre": "Agustina Torres",
+    "email": "agustina.torres@mail.com",
+    "telefono": "261-555-8888",
+    "fechaAlta": { "$date": "2025-04-18T12:25:00Z" }
+  },
+  {
+    "_id": { "$oid": "650000000000000000000109" },
+    "nombre": "Bruno Acosta",
+    "email": "bruno.acosta@mail.com",
+    "telefono": "261-555-9999",
+    "fechaAlta": { "$date": "2025-05-05T17:40:00Z" }
+  },
+  {
+    "_id": { "$oid": "650000000000000000000110" },
+    "nombre": "Milagros Díaz",
+    "email": "milagros.diaz@mail.com",
+    "telefono": "261-555-1010",
+    "fechaAlta": { "$date": "2025-05-22T14:15:00Z" }
+  },
+  {
+    "_id": { "$oid": "650000000000000000000111" },
+    "nombre": "Cliente de Prueba",
+    "email": "email.eliminar@mail.com",
+    "telefono": "261-555-0000",
+    "fechaAlta": { "$date": "2025-06-01T10:00:00Z" }
+  }
+]

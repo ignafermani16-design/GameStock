@@ -1,0 +1,154 @@
+[
+  {
+    "_id": { "$oid": "650000000000000000000201" },
+    "titulo": "God of War Ragnarök",
+    "plataformaId": { "$oid": "650000000000000000000001" },
+    "genero": "Acción / Aventura",
+    "clasificacion": "+18",
+    "estado": "nuevo",
+    "precio": 55000.00,
+    "stock": 8,
+    "codigoBarras": "7891234567890"
+  },
+  {
+    "_id": { "$oid": "650000000000000000000202" },
+    "titulo": "Mario Kart 8 Deluxe",
+    "plataformaId": { "$oid": "650000000000000000000005" },
+    "genero": "Carreras",
+    "clasificacion": "ATP",
+    "estado": "nuevo",
+    "precio": 38000.00,
+    "stock": 15,
+    "codigoBarras": "7891234567891"
+  },
+  {
+    "_id": { "$oid": "650000000000000000000203" },
+    "titulo": "Halo Infinite",
+    "plataformaId": { "$oid": "650000000000000000000003" },
+    "genero": "Shooter",
+    "clasificacion": "+16",
+    "estado": "nuevo",
+    "precio": 42000.00,
+    "stock": 6,
+    "codigoBarras": "7891234567892"
+  },
+  {
+    "_id": { "$oid": "650000000000000000000204" },
+    "titulo": "The Last of Us Part I",
+    "plataformaId": { "$oid": "650000000000000000000001" },
+    "genero": "Acción / Aventura",
+    "clasificacion": "+18",
+    "estado": "nuevo",
+    "precio": 65000.00,
+    "stock": 4,
+    "codigoBarras": "7891234567893",
+    "edicionEspecial": true,
+    "contenidoEdicion": ["Steelbook", "Artbook"]
+  },
+  {
+    "_id": { "$oid": "650000000000000000000205" },
+    "titulo": "FIFA 23",
+    "plataformaId": { "$oid": "650000000000000000000002" },
+    "genero": "Deportes",
+    "clasificacion": "ATP",
+    "estado": "usado",
+    "precio": 18000.00,
+    "stock": 3,
+    "codigoBarras": "7891234567894",
+    "condicion": {
+      "caja": "Buena",
+      "manual": true,
+      "rayas": "leves"
+    }
+  },
+  {
+    "_id": { "$oid": "650000000000000000000206" },
+    "titulo": "The Legend of Zelda: Tears of the Kingdom",
+    "plataformaId": { "$oid": "650000000000000000000005" },
+    "genero": "Aventura",
+    "clasificacion": "+13",
+    "estado": "nuevo",
+    "precio": 60000.00,
+    "stock": 10,
+    "codigoBarras": "7891234567895"
+  },
+  {
+    "_id": { "$oid": "650000000000000000000207" },
+    "titulo": "Forza Horizon 5",
+    "plataformaId": { "$oid": "650000000000000000000003" },
+    "genero": "Carreras",
+    "clasificacion": "ATP",
+    "estado": "usado",
+    "precio": 30000.00,
+    "stock": 2,
+    "codigoBarras": "7891234567896",
+    "condicion": {
+      "caja": "Regular",
+      "manual": false,
+      "rayas": "moderadas"
+    }
+  },
+  {
+    "_id": { "$oid": "650000000000000000000208" },
+    "titulo": "Elden Ring",
+    "plataformaId": { "$oid": "650000000000000000000006" },
+    "genero": "RPG",
+    "clasificacion": "+18",
+    "estado": "nuevo",
+    "precio": 45000.00,
+    "stock": 20,
+    "codigoBarras": "7891234567897"
+  },
+  {
+    "_id": { "$oid": "650000000000000000000209" },
+    "titulo": "Grand Theft Auto V",
+    "plataformaId": { "$oid": "650000000000000000000002" },
+    "genero": "Acción / Mundo abierto",
+    "clasificacion": "+18",
+    "estado": "usado",
+    "precio": 15000.00,
+    "stock": 5,
+    "codigoBarras": "7891234567898",
+    "condicion": {
+      "caja": "Excelente",
+      "manual": true,
+      "rayas": "ninguna"
+    }
+  },
+  {
+    "_id": { "$oid": "650000000000000000000210" },
+    "titulo": "Marvel's Spider-Man 2",
+    "plataformaId": { "$oid": "650000000000000000000001" },
+    "genero": "Acción / Aventura",
+    "clasificacion": "+16",
+    "estado": "nuevo",
+    "precio": 70000.00,
+    "stock": 3,
+    "codigoBarras": "7891234567899",
+    "edicionEspecial": true,
+    "contenidoEdicion": ["Steelbook", "Llavero", "Póster"]
+  },
+  {
+    "_id": { "$oid": "650000000000000000000211" },
+    "titulo": "Minecraft",
+    "plataformaId": { "$oid": "650000000000000000000005" },
+    "genero": "Sandbox",
+    "clasificacion": "ATP",
+    "estado": "nuevo",
+    "precio": 25000.00,
+    "stock": 12,
+    "codigoBarras": "7891234567900",
+    "accesoriosIncluidos": []
+  },
+  {
+    "_id": { "$oid": "650000000000000000000212" },
+    "titulo": "Resident Evil 4 Remake",
+    "plataformaId": { "$oid": "650000000000000000000003" },
+    "genero": "Survival Horror",
+    "clasificacion": "+18",
+    "estado": "nuevo",
+    "precio": 50000.00,
+    "stock": 7,
+    "codigoBarras": "7891234567901"
+  }
+]
